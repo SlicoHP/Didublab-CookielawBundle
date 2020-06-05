@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="didublab_cookielaw_cookie_text">
+                <source>didublab_cookielaw_cookie_text</source>
+                <target>Este sitio web utiliza cookies. Si continúas navegando, consideramos que aceptas su uso.</target>
+            </trans-unit>
+            <trans-unit id="didublab_cookielaw_cookie_accept">
+                 <source>didublab_cookielaw_cookie_accept</source>
+                 <target>Aceptar</target>
+            </trans-unit>
+            <trans-unit id="didublab_cookielaw_cookie_readmore">
+                 <source>didublab_cookielaw_cookie_readmore</source>
+                 <target>Más información</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

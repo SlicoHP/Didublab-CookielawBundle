@@ -1,0 +1,16 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="didublab_cookielaw.cookielaw.cookielaw" class="Didublab\CookielawBundle\Cookielaw\Cookielaw">
+            <argument type="service" id="service_container"/>
+        </service>
+        <service id="didublab_cookielaw.twig_extension.cookie_law_extension" class="Didublab\CookielawBundle\Twig\Extension\CookieLawExtension">
+            <tag name="twig.extension"/>
+            <argument type="service" id="didublab_cookielaw.cookielaw.cookielaw"/>
+            <argument type="service" id="twig"/>
+            <argument type="service" id="service_container"/>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,40 @@
+<style>
+    #didublab_cookielaw_cookies_policy{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+        padding: 30px 15px;
+    }
+    #didublab_cookielaw_cookies_policy span{
+        color: white;
+    }
+    #didublab_cookielaw_cookies_policy a{
+        text-decoration: none;
+        color: white;
+    }
+    #didublab_cookielaw_cookies_button{
+        border: none;
+    }
+</style>
+<div id="didublab_cookielaw_cookies_policy">
+    <span>{{ 'didublab_cookielaw_cookie_text'|trans }}</span>
+    <button id="didublab_cookielaw_cookies_button">{{ 'didublab_cookielaw_cookie_accept'|trans }}</button>
+    {% if didublab_cookielaw_cookie_readmore_route != false %}
+        <a href="{{ path(didublab_cookielaw_cookie_readmore_route) }}">{{ 'didublab_cookielaw_cookie_readmore'|trans }}</a>
+    {% endif %}
+</div>
+<script>
+    document.getElementById("didublab_cookielaw_cookies_button").addEventListener("click", function(){
+        var expires = '';
+        var days = {{ didublab_cookielaw_cookie_days }};
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = '{{ didublab_cookielaw_cookie_name }}' + "=" + ('{{ didublab_cookielaw_cookie_value }}' || "")  + expires + "; path=/";
+        document.getElementById('didublab_cookielaw_cookies_policy').style.display = 'none';
+    });
+</script>

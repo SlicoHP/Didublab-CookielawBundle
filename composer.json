@@ -1,0 +1,23 @@
+{
+  "name": "didublab/cookielaw",
+  "description": "A simple Symfony bundle to display a cookie law message.",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rodrigo Jimenez",
+      "email": "slico@didublab.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Didublab\\CookielawBundle\\": ""
+    }
+  },
+  "require": {
+    "php": "^7.2",
+    "symfony/framework-bundle": "^4.3 || ^5.0",
+    "symfony/routing": "^4.3 || ^5.0",
+    "symfony/translation": "^4.3 || ^5.0",
+    "twig/twig": "^2.0 || ^3.0"
+  }
+}
