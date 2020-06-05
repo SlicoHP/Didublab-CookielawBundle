@@ -18,13 +18,15 @@
         border: none;
     }
 </style>
-<div id="didublab_cookielaw_cookies_policy">
-    <span>{{ 'didublab_cookielaw_cookie_text'|trans }}</span>
-    <button id="didublab_cookielaw_cookies_button">{{ 'didublab_cookielaw_cookie_accept'|trans }}</button>
-    {% if didublab_cookielaw_cookie_readmore_route != false %}
-        <a href="{{ path(didublab_cookielaw_cookie_readmore_route) }}">{{ 'didublab_cookielaw_cookie_readmore'|trans }}</a>
-    {% endif %}
-</div>
+{% block cookielaw_content %}
+    <div id="didublab_cookielaw_cookies_policy">
+        <span>{{ 'didublab_cookielaw_cookie_text'|trans({}, 'cookielaw') }}</span>
+        <button id="didublab_cookielaw_cookies_button">{{ 'didublab_cookielaw_cookie_accept'|trans({}, 'cookielaw') }}</button>
+        {% if didublab_cookielaw_cookie_readmore_route != false %}
+            <a href="{{ path(didublab_cookielaw_cookie_readmore_route) }}">{{ 'didublab_cookielaw_cookie_readmore'|trans({}, 'cookielaw') }}</a>
+        {% endif %}
+    </div>
+{% endblock %}
 <script>
     document.getElementById("didublab_cookielaw_cookies_button").addEventListener("click", function(){
         var expires = '';
